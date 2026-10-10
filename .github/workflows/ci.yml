@@ -34,8 +34,14 @@ jobs:
           format: cyclonedx-json
           output-file: gameflix-sbom.json
 
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v4
+        with:
+          name: gameflix-sbom
+          path: gameflix-sbom.json
+
       - name: Scan Docker image for vulnerabilities
-        uses: aquasecurity/trivy-action@0.33.1
+        uses: aquasecurity/trivy-action@master
         with:
           image-ref: gameflix-backend
           scan-type: image
@@ -43,3 +49,4 @@ jobs:
           severity: CRITICAL
           exit-code: '1'
           format: table
+          timeout: 30m
