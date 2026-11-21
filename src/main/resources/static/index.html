@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameFlix | Your Gaming Universe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="navbar">
+    <a href="#home" class="logo">GAME<span>FLIX</span></a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#games">Games</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="nav-actions">
+        <button id="loginBtn" class="btn btn-outline">Login</button>
+        <button id="registerBtn" class="btn btn-primary">Sign Up</button>
+    </div>
+</header>
+
+<main>
+    <!-- Homepage -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="eyebrow">WELCOME TO GAMEFLIX</div>
+
+            <h1>Your Next Gaming Adventure Starts Here.</h1>
+
+            <p>
+                Discover exciting games, explore new worlds,
+                and connect with your favorite gaming experiences.
+            </p>
+
+            <a href="#games" class="btn btn-primary">
+                Explore Games
+            </a>
+        </div>
+
+        <div class="hero-art">
+            <div class="controller">🎮</div>
+            <div class="glow"></div>
+        </div>
+    </section>
+
+    <!-- Featured Games -->
+    <section class="games-section" id="games">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">DISCOVER</p>
+                <h2>Featured Games</h2>
+            </div>
+
+            <p>Explore some of our featured gaming categories.</p>
+        </div>
+
+        <div class="game-grid">
+
+            <!-- Game 1 -->
+            <article class="game-card">
+                <div class="game-art art-one">⚔️</div>
+
+                <div class="game-info">
+                    <span class="game-category">ACTION</span>
+                    <h3>Shadow Legends</h3>
+
+                    <p>Battle through a world of epic adventures.</p>
+
+                    <button class="btn btn-card game-details"
+                            data-game="Shadow Legends">
+                        View Details
+                    </button>
+                </div>
+            </article>
+
+            <!-- Game 2 -->
+            <article class="game-card">
+                <div class="game-art art-two">🏎️</div>
+
+                <div class="game-info">
+                    <span class="game-category">RACING</span>
+                    <h3>Velocity Rush</h3>
+
+                    <p>Experience high-speed racing challenges.</p>
+
+                    <button class="btn btn-card game-details"
+                            data-game="Velocity Rush">
+                        View Details
+                    </button>
+                </div>
+            </article>
+
+            <!-- Game 3 -->
+            <article class="game-card">
+                <div class="game-art art-three">🚀</div>
+
+                <div class="game-info">
+                    <span class="game-category">ADVENTURE</span>
+                    <h3>Galaxy Explorer</h3>
+
+                    <p>Travel across space and discover new worlds.</p>
+
+                    <button class="btn btn-card game-details"
+                            data-game="Galaxy Explorer">
+                        View Details
+                    </button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <p class="eyebrow">ABOUT THE PROJECT</p>
+
+        <h2>Built for Gamers.</h2>
+
+        <p>
+            GameFlix is a gaming platform project developed
+            using Java, Spring Boot, HTML, CSS, and JavaScript.
+            The goal is to combine a modern frontend with
+            backend features such as account registration,
+            login, and secure password storage.
+        </p>
+    </section>
+</main>
+
+<!-- Login and Registration Popup -->
+<div class="modal hidden" id="authModal">
+    <div class="modal-content">
+
+        <button class="close-modal"
+                id="closeModal"
+                aria-label="Close">
+            &times;
+        </button>
+
+        <h2 id="modalTitle">Welcome Back</h2>
+
+        <p id="modalSubtitle">
+            Log in to your GameFlix account.
+        </p>
+
+        <form id="authForm">
+
+            <label for="username">Username</label>
+
+            <input id="username"
+                   type="text"
+                   placeholder="Enter username"
+                   autocomplete="username"
+                   required>
+
+            <label for="password">Password</label>
+
+            <input id="password"
+                   type="password"
+                   placeholder="Enter password"
+                   autocomplete="current-password"
+                   required>
+
+            <button type="submit"
+                    class="btn btn-primary full-width"
+                    id="submitBtn">
+                Login
+            </button>
+
+        </form>
+
+        <p id="authMessage"
+           role="status"
+           aria-live="polite"></p>
+
+    </div>
+</div>
+
+<!-- Game Details Popup -->
+<div class="modal hidden" id="gameModal">
+    <div class="modal-content">
+
+        <button class="close-modal"
+                id="closeGameModal"
+                aria-label="Close">
+            &times;
+        </button>
+
+        <p class="eyebrow" id="gameModalCategory"></p>
+
+        <h2 id="gameModalTitle"></h2>
+
+        <p id="gameModalDescription"></p>
+
+        <h3>Game Highlights</h3>
+
+        <ul id="gameModalHighlights"></ul>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 GameFlix. HCDD 412 Final Project.</p>
+</footer>
+
+</body>
+</html>

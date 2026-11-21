@@ -1,0 +1,511 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --background: #090b15;
+    --surface: #141728;
+    --surface-light: #1d2137;
+    --purple: #8b5cf6;
+    --purple-light: #a78bfa;
+    --text: #f5f5ff;
+    --muted: #a5abc2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+button, input {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 7%;
+    background: rgba(9, 11, 21, 0.95);
+    border-bottom: 1px solid #262a40;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--purple-light);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--muted);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 22px;
+    font-weight: 700;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--purple);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #7c3aed;
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 1px solid #4b506b;
+}
+
+.btn-outline:hover {
+    background: var(--surface-light);
+}
+
+.hero {
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 85px 7%;
+    background:
+            radial-gradient(circle at 80% 35%, #34205d 0%, transparent 40%),
+            linear-gradient(135deg, #11152b, #090b15);
+}
+
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    color: var(--purple-light);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 66px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    margin: 18px 0 24px;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 530px;
+    margin-bottom: 30px;
+}
+
+.hero-art {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-width: 280px;
+    min-height: 280px;
+}
+
+.controller {
+    font-size: 160px;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 20px 40px #8b5cf688);
+    transform: rotate(-12deg);
+}
+
+.glow {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background: #7c3aed;
+    opacity: 0.25;
+    filter: blur(75px);
+}
+
+.games-section {
+    padding: 90px 7%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.section-heading h2,
+.about-section h2 {
+    font-size: 36px;
+    margin: 8px 0;
+}
+
+.section-heading > p {
+    color: var(--muted);
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.game-card {
+    background: var(--surface);
+    border: 1px solid #292d45;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.game-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--purple);
+}
+
+.game-art {
+    height: 205px;
+    display: grid;
+    place-items: center;
+    font-size: 90px;
+}
+
+.art-one {
+    background: linear-gradient(135deg, #582a85, #171b40);
+}
+
+.art-two {
+    background: linear-gradient(135deg, #8a2c5a, #291c4d);
+}
+
+.art-three {
+    background: linear-gradient(135deg, #135e83, #292061);
+}
+
+.game-info {
+    padding: 25px;
+}
+
+.game-category {
+    color: var(--purple-light);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.game-info h3 {
+    font-size: 22px;
+    margin: 8px 0;
+}
+
+.game-info p {
+    color: var(--muted);
+    min-height: 52px;
+}
+
+.btn-card {
+    width: 100%;
+    background: var(--surface-light);
+    color: white;
+    margin-top: 12px;
+}
+
+.btn-card:hover {
+    background: var(--purple);
+}
+
+.about-section {
+    padding: 85px 7%;
+    text-align: center;
+    background: #111427;
+}
+
+.about-section > p:last-child {
+    max-width: 750px;
+    margin: 20px auto;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: var(--muted);
+    border-top: 1px solid #262a40;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    padding: 38px;
+    background: var(--surface);
+    border: 1px solid #343956;
+    border-radius: 20px;
+    box-shadow: 0 20px 80px #0009;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font-size: 30px;
+}
+
+.modal-content h2 {
+    font-size: 29px;
+    margin: 0 0 8px;
+}
+
+.modal-content > p {
+    color: var(--muted);
+}
+
+#authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+#authForm label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#authForm input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 12px;
+    border-radius: 9px;
+    border: 1px solid #41465e;
+    background: #0c0f1e;
+    color: white;
+    outline: none;
+}
+
+#authForm input:focus {
+    border-color: var(--purple);
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 8px;
+}
+
+#authMessage {
+    min-height: 24px;
+    font-size: 14px;
+}
+
+#authMessage.success {
+    color: #4ade80;
+}
+
+#authMessage.error {
+    color: #fb7185;
+}
+
+@media (max-width: 850px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .game-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 520px) {
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .btn {
+        padding: 10px 14px;
+    }
+
+    .hero {
+        padding: 65px 5%;
+    }
+
+    .hero-art {
+        min-height: 190px;
+    }
+
+    .controller {
+        font-size: 110px;
+    }
+
+    .games-section {
+        padding: 65px 5%;
+    }
+
+    .modal-content {
+        padding: 28px 22px;
+    }
+}
+
+/* GameFlix Game Details Popup */
+.game-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.game-modal.hidden {
+    display: none;
+}
+
+.game-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 35px;
+    border: 1px solid #343454;
+    border-radius: 20px;
+    background: #141728;
+    color: #f5f5ff;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.game-modal-content h2 {
+    margin: 12px 0;
+    font-size: 28px;
+}
+
+.game-modal-content p {
+    line-height: 1.7;
+    color: #a5abc2;
+}
+
+.game-modal-content ul {
+    margin-top: 15px;
+    padding-left: 22px;
+    line-height: 2;
+}
+
+.game-modal-content .close-game-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: none;
+    background: transparent;
+    color: #f5f5ff;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.game-modal-content .close-game-modal:hover {
+    color: #a78bfa;
+}
